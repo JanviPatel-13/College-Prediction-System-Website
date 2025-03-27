@@ -7,21 +7,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>College Shiksha</title>
+	<title>ShikshaDwaar</title>
 	<link rel="stylesheet" type="text/css" href="Login.css">
-	<link rel = "icon" href = "jagran_logo1.jpg" type = "image/x-icon">
+	<link rel = "icon" href = "Logo.jpg" type = "image/x-icon">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>ShikshaDwaar</title>
 </head>
-<body><!--http://mrwallpapers.com/wp-content/uploads/2018/10/wall-leaves-wooden-background-images-hd.jpg-->
-<div>
+<body>
+   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+		<a class="navbar-brand" href="home.php">
+		<img src="Logo.jpg" width="30" height="30" class="d-inline-block align-top" alt=""> ShikshaDwaar
+  		</a>
+<!-- Links -->
+<ul class="navbar-nav ml-auto">
+    		
+    		<li class="nav-item">
+      			<a class="nav-link" href="practice.php">About Us</a>
+    		</li>
+			<li class="nav-item active">
+      			<a class="nav-link" href="home.php">Home</a>
+    		</li>
+    		<li class="nav-item">
+      			<a class="nav-link" href="login.php">Not <?php
+      			if(isset($_SESSION['username']))
+      				{
+      					echo $_SESSION['username'];
+      				}
+      			?>? Logout</a>
+    		</li>
+  		</ul>
+	</nav>
+
+<div class="background">
 <div class="form" id="login">
 	<div class="box">
 	<h3>LOGIN</h3>
 	<div class="social-container">
-		<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-		<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-		<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 	</div>
 	<div>
 		<?php
@@ -129,5 +154,16 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="Login.js"></script>
+<script>
+  // Smooth scrolling for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body>
 </html>
